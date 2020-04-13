@@ -1,0 +1,98 @@
+﻿<Window x:Class="CSharp_Lab2_WPF.DifferencesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharp_Lab2_WPF"
+        mc:Ignorable="d"
+        Title="Изменения" Height="700" Width="1400" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid Name="oldDataGrid" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,31,695.6,10.4" SelectionChanged="oldDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Идентификатор УБИ" Binding="{Binding Id}" CanUserSort="False"></DataGridTextColumn>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="BlanchedAlmond" Padding="10">
+                        <StackPanel Orientation="Vertical">
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Наименование УБИ: " MinWidth="200" VerticalAlignment="Top" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Name}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Описание: " MinWidth="200" VerticalAlignment="Top" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Description}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Источник угрозы: " MinWidth="200" VerticalAlignment="Top" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Source}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Объект воздействия угрозы: " MinWidth="200" VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Object}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Нарушение конфиденциальности: " MinWidth="200" VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding PrivacyViolation}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Нарушение целостности: " MinWidth="200" VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding IntegrityViolation}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Нарушение доступности: " MinWidth="200" VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding AvailabilityViolation}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <DataGrid Name="newDataGrid" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="0,31,9.6,10.4" SelectionChanged="newDataGrid_SelectionChanged" HorizontalAlignment="Right" Width="686">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Идентификатор УБИ" Binding="{Binding Id}" CanUserSort="False"></DataGridTextColumn>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="BlanchedAlmond" Padding="10">
+                        <StackPanel Orientation="Vertical">
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Наименование УБИ: " MinWidth="200" VerticalAlignment="Top" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Name}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Описание: " MinWidth="200" VerticalAlignment="Top" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Description}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Источник угрозы: " MinWidth="200"  VerticalAlignment="Top" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Source}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Объект воздействия угрозы: " MinWidth="200"  VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding Object}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Нарушение конфиденциальности: " MinWidth="200"  VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding PrivacyViolation}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Нарушение целостности: " MinWidth="200"  VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding IntegrityViolation}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="12" Text="Нарушение доступности: " MinWidth="200"  VerticalAlignment="Center" />
+                                <TextBlock FontSize="12" Foreground="MidnightBlue" TextWrapping="Wrap" MaxWidth="450" Text="{Binding AvailabilityViolation}" VerticalAlignment="Stretch" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Label Content="Было" Margin="10,0,705.6,0" Height="26" VerticalAlignment="Top"/>
+        <Label Content="Стало" Margin="693,0,9.6,0" Height="26" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
